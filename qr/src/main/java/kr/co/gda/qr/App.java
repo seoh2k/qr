@@ -55,13 +55,12 @@ public class App extends JFrame {
         ImageIO.write(qrImage, "png", new File("myqr.png")); // 메모라인의 이미지, 확장자
         
         // 4. QR 출력 -> web이면 jsp view -> pc 앱이면 swing frame -> android면 activity
-        
         App app = new App();
         app.setTitle("QR");
-        app.setLayout(new FlowLayout());
+        app.setLayout(new FlowLayout()); // FlowLayout(): 배치관리자, 왼쪽에서 오른쪽으로 배치
         
-        ImageIcon icon = new ImageIcon(imageFileName);
-        JLabel imageLabel = new JLabel(icon);
+        ImageIcon icon = new ImageIcon(imageFileName); // ImageIcon: 아이콘을 이미지객체로 만든다
+        JLabel imageLabel = new JLabel(icon); // 라벨 설정
         app.add(imageLabel);
         
         app.setSize(200, 200);
